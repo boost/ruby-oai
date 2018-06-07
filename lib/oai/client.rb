@@ -97,7 +97,7 @@ module OAI
             require 'faraday_middleware'
             builder.response :follow_redirects, :limit => count
           end
-          builder.adapter :net_http
+          # builder.adapter :net_http
         end
       end
 
