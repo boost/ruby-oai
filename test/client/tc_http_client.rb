@@ -45,7 +45,7 @@ eos
     faraday_stub = Faraday.new do |builder|
       require 'faraday_middleware'
       builder.use FaradayMiddleware::FollowRedirects
-      builder.adapter :test, stubs
+      # builder.adapter :test, stubs
     end
 
     client = OAI::Client.new 'http://localhost:3334/oai', :http => faraday_stub
