@@ -12,9 +12,9 @@ class HttpClientTest < Test::Unit::TestCase
 eos
 
     faraday_stub = Faraday.new do |builder|
-      builder.adapter :test do |stub|
-        stub.get('/oai?verb=Identify') { [200, {}, oai_response] }
-      end
+      # builder.adapter :test do |stub|
+        # stub.get('/oai?verb=Identify') { [200, {}, oai_response] }
+      # end
     end
     client = OAI::Client.new 'http://localhost:3333/oai', :http => faraday_stub
     response = client.identify
